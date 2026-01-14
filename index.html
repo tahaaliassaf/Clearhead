@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClearHead</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <h1>🧠 ClearHead</h1>
+    <p class="subtitle">You're not lazy. You're overloaded.</p>
+
+    <textarea id="dump" placeholder="What's stressing you out right now?"></textarea>
+    <button onclick="processDump()">Clear My Head</button>
+
+    <div id="results"></div>
+
+    <p class="footer">No accounts. No tracking. No bullshit.</p>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+
+</body>
+</html>
